@@ -24,21 +24,26 @@ public class UsuarioModel {
     @Column(nullable = false, unique = true)
     private String correo;
 
-    @Column(nullable = false,length = 3)
-    private Integer edad;
+    @Column(nullable = false)
+    private String contrasenia;
 
     @Column(nullable = false)
-    private String telefono;
+    private String direccion;
+
 
     @Column(nullable = false)
-    private String pais;
+    private String numeracion;
 
     @Column(nullable = false)
-    private String moneda;
+    private String comuna;
 
     @Column(nullable = false)
-    private Double monto;
+    private String ciudad;
 
+    @Column(nullable = false)
+    private String codigoPostal;
 
+    @Column()
+    private String descripcionEntrega;
 
 }
