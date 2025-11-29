@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/apuestas/usuarios")
+@RequestMapping("/api/pokemon/usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
 
