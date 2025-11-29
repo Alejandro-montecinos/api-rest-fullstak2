@@ -3,13 +3,15 @@ package com.duocuc.api.app.kotling.apuestas.controller;
 
 import com.duocuc.api.app.kotling.apuestas.model.UsuarioModel;
 import com.duocuc.api.app.kotling.apuestas.service.UsuarioService;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:5173") // vite usa otro puerto
 @RestController
 @RequestMapping("/api/pokemon/usuarios")
 @RequiredArgsConstructor
@@ -52,6 +54,19 @@ public class UsuarioController {
         return usuarioService.eliminarUsuario(id)
                 .map(u -> ResponseEntity.noContent().<Void>build())
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UsuarioModel> login(@RequestBody LoginRequest request) {
+        return usuarioService.login(request.getCorreo(), request.getContrasenia())
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+    }
+
+    @Data
+    public static class LoginRequest {
+        private String correo;
+        private String contrasenia;
     }
 
 

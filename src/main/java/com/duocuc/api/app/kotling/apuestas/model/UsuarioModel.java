@@ -15,7 +15,6 @@ public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false,unique = true,updatable = true)
     private Integer id;
 
     @Column(nullable = false, length = 100)

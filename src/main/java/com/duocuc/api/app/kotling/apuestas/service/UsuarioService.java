@@ -40,5 +40,11 @@ public class UsuarioService {
         return usuario;
     }
 
+    public Optional<UsuarioModel> login(String correo, String contrasenia) {
+        return usuarioRepository.findByCorreo(correo)
+                .filter(u -> u.getContrasenia().equals(contrasenia));
+    }
+
+
 
 }
