@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173") // Vite
+@CrossOrigin(origins = {"http://localhost:5173", "http://44.213.75.195"}) // Vite
 @RestController
 @RequestMapping("/api/pokemon/productos")
 @RequiredArgsConstructor

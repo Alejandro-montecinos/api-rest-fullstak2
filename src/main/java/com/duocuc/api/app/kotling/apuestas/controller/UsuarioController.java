@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:5173") // vite usa otro puerto
+@CrossOrigin(origins = {"http://localhost:5173", "http://44.213.75.195"})
 @RestController
 @RequestMapping("/api/pokemon/usuarios")
 @RequiredArgsConstructor
