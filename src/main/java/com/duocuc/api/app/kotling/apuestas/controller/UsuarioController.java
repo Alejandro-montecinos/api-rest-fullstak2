@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-@CrossOrigin(origins = {"http://localhost:5173", "http://44.213.75.195"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://3.239.91.151"})
 @RestController
 @RequestMapping("/api/pokemon/usuarios")
 @RequiredArgsConstructor
